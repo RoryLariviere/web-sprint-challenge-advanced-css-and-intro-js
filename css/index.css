@@ -247,6 +247,12 @@ button:hover {
         width: 60%;
     }
     .title-container div {
+        background-position: center;
+        width: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .title-container hr {
         width: 100%;
     }
     .artists-container {
@@ -254,9 +260,24 @@ button:hover {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        width: 60%;
     }
     .artist {
         width: 100%;
-        padding: 5% 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .artist a {
+        font-size: 1.6rem;
+    }
+    .bio {
+        width: 100%;
+        font-size: 1rem;
+    }
+    .artist img {
+        width: 80%;
+        height: 50%;
     }
 }

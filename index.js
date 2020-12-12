@@ -244,16 +244,17 @@ Use get20s to do the following:
 Example born in 1901 and died in 1959 - included -- born in 1889 and died in 1925 not included
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
+
+
 function get20s(arr) {
-    const newArr = [];
+    let dates = [];
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i].years > 1900 && arr[i].years < 2000) {
-            newArr.push(arr[i].name);
+        if (parseInt((arr[i].years.substring(0, 4))) >= 1900 && parseInt((arr[i].years.substring(7, 12))) <= 2000) {
+            dates.push(arr[i].name)
         }
     }
-    return newArr;
+    return dates;
 }
-
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -266,12 +267,12 @@ function get20s(arr) {
  For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
 function removeArtist(arr, num) {
-    for (let i = 0; i < array.length; i++) {
-        if (str === array[i]) {
-            array.splice(i, 1);
+    for (let i = 0; i < arr.length; i++) {
+        if (num === arr[i].id) {
+            arr.splice(i, 1);
         }
     }
-    return array;
+    return arr.length;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -291,14 +292,15 @@ Use addArtist to do the following:
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
 function addArtist(arr) {
-    return arr.push({
+    arr.push({
         id: 20,
         name: 'Rory Lariviere',
         years: 1995 - 12 / 11 / 2020,
         genre: 'Web Design',
         nationality: 'American',
         bio: 'I currently live in Milwaukee, WI, but was born in New Milford, CT and lived in Rome, GA from the ages of 10 to 23. I am now learning fullstack web development at Lambda School.',
-    })
+    });
+    return arr;
 }
 
 
@@ -311,8 +313,15 @@ Use lotsOfArt to do the following:
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
 function lotsOfArt(arr) {
-    if (arr.paintings > 100) {}
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].paintings > 100) {
+            newArr.push(arr[i].name);
+        }
+    }
+    return newArr;
 }
+
 
 
 
